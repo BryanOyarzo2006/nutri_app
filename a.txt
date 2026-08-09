@@ -1,0 +1,62 @@
+formas de determinar que una persona pase menos tiempo hospitalizada.
+-> 1ra parte  -> Datos
+
+-> 2da parte -> antropometría
+
+específicas cirugías requieren distintos parámetros y valores para ellos.
+
+Evaluaci 
+
+1. MUAC <- Cantidad de músculo** <- más posibilidades de supervivencia en operación. <- 1er
+Grasa <- 
+a
+<500ml no se puede.
+x<115 ml: definitivamente no, por que el paciente presenta desnutrición aguda severa.
+115<x< 124 ml: desnutrición moderada, depende de un exámen, si el exámen está bueno, puede ser que si.
+depende de albúminemia (nuestras reservas de proteína a nivel sanguíneo), todas dependen del grupo 
+
+-1 año:
+2.5 a 3.4 mg/dL excepción muy importante
+Si sobrepasa 3.4 no hay nada malo, el único problemas es cuando está bajo 2.5.
+
+primera parte de la aplicación: identificadores: fecha de nacimiento y sexo de la persona.
+
+PCR (inflamación): si es mayor a 1, hace que se invalide la albuminemia, pero si algún paciente tuviera
+sobre 115 si se puede operar.
+
+2.5 - 3.4mg
+3.9 - 5mg
+5/19 años = 4 - 5.3mg
+
+La albumina va a valer solo si la PCR es inferior a 1, si el paciente en esa albumina presentará inferior a 115 en el MUAC sería un NO DEFINITIVO
+Si es menor a uno es >=115 si se puede operar.
+
+
+----- 2do de Antropometría
+(Depende de la edad)
+Pliegue Tricipital: P10<x<P10
+
+Parte de Percentil
+
+Hay un NO Definitivo si el percentil para la edad y el sexo es inferior al percentil 10 (P10)
+Hay un SI si el percentil para el sexo y la edad es superior al percentil 10 (P10).
+
+Tabla de percentile, la aplicación debe dar el percentil dependiendo del valor que le entreguemos.
+
+----- Evaluación válidada: StrongKids: se aplica cuando se tiene al paciente, se calcula un número, mientras más alto, más grave está el paciente.
+StrongKids da dos número, de 0 a 3 o de 4 a 5.
+en el primer caso SI, en el segundo caso NO se podría operar.
+
+4ta parte Exámenes Bioquímicos.
+
+Hemoglobína (La salud de los glóbulos rojos)
+
+6-12 meses: 11,1 a 14,1
+1- 5 años: 11,5 a 14
+6 - 12 años: 11,5 a 15,5
+
+Si el paciente tuvera menor a los valores mínimos de la normalidad, sería un NO ROTUNDO.
+
+(para el desarrollo neuromuscular)
+Vitámina B12 > 270 bien, pero si <200 DEFICIT (RECHAZO), pero también necesitamos saber de
+la vitamina D, si es <20ng/mL, no puede, pero debe iniciar la suplementación alimentaria.
