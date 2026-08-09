@@ -1,6 +1,11 @@
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit
+from PyQt6.QtWidgets import (
+    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
+    QStackedWidget
+)
 from src.gui.widgets.custon_widgets import CustomButton, CustomSelect
+
+# Clase para la ventana principal de la aplicación
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -10,11 +15,13 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("NutriApp")
         self.setGeometry(100, 100, 400, 600)
 
-        # Esto crea el Widget Principal y el Layout de la ventana principal
-        central = QWidget()
+        # CONFIGURACIÓN DE LAYOUTS Y BOXES PRINCIPALES========================================
+        self.stacked_widget = QStackedWidget() # Aquí creamos el Widget para tener secciones
+        self.setCentralWidget(self.stacked_widget) # Lo dejamos como Widget Central.
 
-        # Esto anida un layout vertical dentro de uno horizontals
-        vbox = QVBoxLayout(central)
+        main_pag = QWidget() # Creamos un Widget para la página principal
+        main_vbox = QVBoxLayout(main_pag) # Añadimos un QVBoxLayout a la página principal
+
 
         # CREACIÓN DE WIDGETS ================================================================
         title_label = QLabel("NutriAPP")
@@ -35,8 +42,8 @@ class MainWindow(QMainWindow):
         accept_button = CustomButton("Siguiente", 40, 120, "#2563eb")
 
         # AÑADIR WIDGETS =====================================================================
-        vbox.addWidget(title_label)
-        vbox.addWidget(birthday)
-        vbox.addWidget(select_sex)
-        vbox.addWidget(accept_button)
-        self.setCentralWidget(central)
+        main_vbox.addWidget(title_label)
+        main_vbox.addWidget(birthday)
+        main_vbox.addWidget(select_sex)
+        main_vbox.addWidget(accept_button)
+        self.stacked_widget.addWidget(main_pag) # Añadimos toda la página al QStackedWidget
