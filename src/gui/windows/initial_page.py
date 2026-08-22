@@ -1,42 +1,38 @@
 from PyQt6.QtWidgets import (
-    QWidget, QPushButton, QVBoxLayout, QLabel, QLineEdit,
-    QStackedWidget
+    QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
 )   
-from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtCore import Qt
 from src.gui.widgets.custom_widgets import CustomButton, CustomSelect
 
 
 class InitialPage(QWidget):
 
-    # Definimos la señal personalizada en la clase
-    goto_next_section = pyqtSignal()
-
     def __init__(self):
         super().__init__()
 
         # CREACIÓN DE WIDGETS
-        title_label = QLabel("NutriAPP")
-        title_label.setStyleSheet("""
+        self.title_label = QLabel("NutriAPP")
+        self.title_label.setStyleSheet("""
             QLabel {
                 font-size: 24px;
                 font-weight: bold;
-                margin-top: 1px;
-                margin-bottom: 1px;
+                margin-top: 5px;
+                margin-bottom: 5px;
             }
         """)
-        title_label.setAlignment(
+        self.title_label.setAlignment(
             Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop
         )
 
-        birthday = QLineEdit()
-        select_sex = CustomSelect(options=["Hombre", "Mujer"], placeholder="Sexo")
-        accept_button = CustomButton("Siguiente", 40, 120, "#2563eb")
+        self.birthday = QLineEdit()
+        self.select_sex = CustomSelect(options=["Hombre", "Mujer"], placeholder="Sexo")
+        self.accept_button = CustomButton("Siguiente", 40, 120, "#2563eb")
 
         # CREACIÓN DE LAYOUTS Y BOXES
         vbox = QVBoxLayout()
-        vbox.addWidget(title_label)
-        vbox.addWidget(birthday)
-        vbox.addWidget(select_sex)
-        vbox.addWidget(accept_button)
+        vbox.addWidget(self.title_label)
+        vbox.addWidget(self.birthday)
+        vbox.addWidget(self.select_sex)
+        vbox.addWidget(self.accept_button)
 
         self.setLayout(vbox)
